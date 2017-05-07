@@ -21,8 +21,14 @@ var data = [
   'wheat', 12
 ]
 
+var xpos = 20;
 
-for (var i=0; i < data.legth; i++) {
-  document.write(data[i]);
-  document.write('<br />');
+for (var i = 0; i < data.length; i += 2) {
+    var bar = document.createElement('div');
+    bar.setAttribute('class', 'bar');
+    document.getElementById('frame').appendChild(bar);
+    bar.style.left = xpos + 'px';
+    bar.style.height = 4 * data[i + 1] + 'px';
+    bar.style.background-color = data[i];
+    xpos += 40;
 }
